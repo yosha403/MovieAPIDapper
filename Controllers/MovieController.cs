@@ -24,5 +24,18 @@ namespace MovieAPI.Controllers
             Movie m = mDAL.GetMovieByGenre(genre);
             return m;
         }
+
+        [HttpGet("random")]
+        public Movie GetRandomMovie()
+        {
+            return mDAL.GetRandomMovie();
+        }
+
+
+        [HttpGet("{genre}/random")]
+        public Movie GetRandomByGenre(string genre)
+        {
+            return mDAL.GetRandomByGenre(genre);
+        }
     }   
 }
